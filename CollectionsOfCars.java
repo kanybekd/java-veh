@@ -4,6 +4,8 @@ public class CollectionsOfCars {
     List<Truck> trucks= new ArrayList<>();
     List<EV> evs= new LinkedList<>();
 
+    // List<Vehicles> allVehicles=new 
+
     public void addNewTruck(Truck newTRcuk ){
         trucks.add(newTRcuk);
         
@@ -37,7 +39,7 @@ public class CollectionsOfCars {
         }
     }
 
-    //disokay all cars
+    //display all cars
     public void displayAllCars(){
         System.out.println("===TRUCKS===");
         if(trucks.size()==0){
@@ -58,6 +60,28 @@ public class CollectionsOfCars {
                 e.displayInfo();
             }
         }
+    }
+
+    //remove vehicle based on model
+    public void removeVehicle(String model){
+        for(int i=0;i<trucks.size();i++){
+            if(trucks.get(i).getModel().equalsIgnoreCase(model)){
+                trucks.remove(i);
+                System.out.println(model+" has been removed from trucks");
+                return;
+            }
+        }
+        for(int i=0;i<evs.size();i++){
+            if(evs.get(i).getModel().equalsIgnoreCase(model)){
+                evs.remove(i);
+                System.out.println(model+" has been removed EVS");
+                return;
+            }
+        }
+            
+        System.out.println("no such Vehicle to remove");
+       
+
     }
 
 

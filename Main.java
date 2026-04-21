@@ -3,7 +3,8 @@ class Main{
     public static void main(String[] args){
         Scanner newScanner= new Scanner(System.in);
         CollectionsOfCars myGarage= new CollectionsOfCars();
-        while(true){
+        boolean start=true;
+        while(start){
             System.out.println("Wlcome to my Collections Dashboard");
             System.out.println("Please make a selection");
             System.out.println("1.Add new vehicle");
@@ -41,7 +42,17 @@ class Main{
                     String modelForSearch=newScanner.nextLine();
                     myGarage.searchVehicle(modelForSearch);
                     break;
-
+                case 3: 
+                    System.out.println("Enter model info:");
+                    String modelForDelete=newScanner.nextLine();
+                    myGarage.removeVehicle(modelForDelete);
+                    break;
+                case 4:
+                    myGarage.displayAllCars();
+                    break;
+                case 5:
+                    System.out.println("Good bye");
+                    start=false;
             }
         }
 
